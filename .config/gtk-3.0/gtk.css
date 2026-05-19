@@ -1,0 +1,51 @@
+/* ── THUNAR — SIDEBAR ────────────────── */
+.sidebar {
+    background-color: #080f10;
+    border-right: 1px solid rgba(0, 240, 255, 0.2);
+    color: #4b696d;
+}
+
+.sidebar row:selected {
+    background-color: rgba(0, 240, 255, 0.1);
+    color: #00F0FF;
+    border-left: 2px solid #00F0FF;
+}
+
+.sidebar row:hover {
+    background-color: rgba(0, 240, 255, 0.05);
+    color: #8ab8bc;
+}
+
+/* ── BARRA INFERIOR DE ESTADO ─────────── */
+statusbar {
+    background-color: #080f10;
+    border-top: 1px solid rgba(0, 240, 255, 0.15);
+    color: #4b696d;
+    font-size: 11px;
+}
+
+/* ── BARRA DE DIRECCIONES ─────────────── */
+entry {
+    background-color: #0f1c1d;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 8px;
+    color: #e2e2d7;
+    caret-color: #00F0FF;
+}
+
+entry:focus {
+    border-color: #00F0FF;
+    box-shadow: 0 0 6px rgba(0, 240, 255, 0.2);
+}
+
+/* ── MENÚ SUPERIOR ────────────────────── */
+menubar {
+    background-color: #080f10;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+    color: #8ab8bc;
+}
+
+menubar > menuitem:hover {
+    background-color: rgba(0, 240, 255, 0.08);
+    color: #00F0FF;
+}

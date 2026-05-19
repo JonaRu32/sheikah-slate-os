@@ -1,0 +1,72 @@
+* {
+    bg:      #0a1a1b;
+    bg-alt:  #0f1c1d;
+    fg:      #e2e2d7;
+    cyan:    #00F0FF;
+    orange:  #FF7A00;
+    border:  #00F0FF;
+
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    background-color: @bg;
+    border:           2px solid;
+    border-color:     @border;
+    border-radius:    14px;
+    width:            480px;
+    padding:          12px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [inputbar, listview];
+    spacing: 10px;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border:           1px solid;
+    border-color:     @cyan;
+    border-radius:    10px;
+    padding:          10px 14px;
+    children:         [prompt, entry];
+    spacing:          8px;
+}
+
+prompt {
+    text-color: @cyan;
+    font:       "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+    text-color:        @fg;
+    placeholder:       "Buscar red...";
+    placeholder-color: #4b696d;
+}
+
+listview {
+    background-color: transparent;
+    lines:            8;
+    spacing:          4px;
+}
+
+element {
+    background-color: transparent;
+    border-radius:    8px;
+    padding:          10px 14px;
+}
+
+element selected {
+    background-color: @bg-alt;
+    text-color:       @cyan;
+    border:           1px solid;
+    border-color:     @cyan;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    font:             "JetBrainsMono Nerd Font 12";
+}

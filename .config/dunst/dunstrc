@@ -1,0 +1,73 @@
+[global]
+    # ── POSICIÓN Y GEOMETRÍA ──────────────────────────
+    origin             = top-right
+    offset             = 12x56
+    width              = (200, 380)
+    height             = 200
+    gap_size           = 8
+    notification_limit = 5
+    
+    # ── ESTÉTICA BASE ─────────────────────────────────
+    frame_width        = 2
+    corner_radius      = 12
+    padding            = 14
+    horizontal_padding = 16
+    text_icon_padding  = 12
+    separator_height   = 2
+    separator_color    = frame
+    
+    # ── TIPOGRAFÍA ────────────────────────────────────
+    font               = JetBrainsMono Nerd Font 11
+    line_height        = 4
+    markup             = full
+    format             = "<b>%s</b>\n%b"
+    alignment          = left
+    vertical_alignment = center
+    word_wrap          = yes
+    ellipsize          = middle
+    
+    # ── ICONOS ────────────────────────────────────────
+    icon_theme         = Papirus-Dark
+    enable_recursive_icon_lookup = true
+    icon_position      = left
+    min_icon_size      = 32
+    max_icon_size      = 48
+    
+    # ── COMPORTAMIENTO ────────────────────────────────
+    sort               = urgency_descending
+    idle_threshold     = 120
+    show_age_threshold = 60
+    sticky_history     = yes
+    history_length     = 20
+    
+    # ── RATÓN ─────────────────────────────────────────
+    mouse_left_click   = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click  = close_all
+
+# ── URGENCIA: BAJA ────────────────────────────────────
+# Mensajes del sistema, info general
+[urgency_low]
+    background   = "#0a1a1b"
+    foreground   = "#8ab8bc"
+    frame_color  = "#1a4a4f"
+    timeout      = 4
+    default_icon = dialog-information
+
+# ── URGENCIA: NORMAL ──────────────────────────────────
+# Notificaciones estándar — estética Sheikah pura
+[urgency_normal]
+    background   = "#0f1c1d"
+    foreground   = "#e2e2d7"
+    frame_color  = "#00F0FF"
+    timeout      = 6
+    default_icon = dialog-information
+
+# ── URGENCIA: CRÍTICA ─────────────────────────────────
+# Alertas — naranja Trifuerza
+[urgency_critical]
+    background   = "#1a0800"
+    foreground   = "#ffffff"
+    frame_color  = "#FF7A00"
+    timeout      = 0
+    default_icon = dialog-warning

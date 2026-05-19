@@ -1,0 +1,81 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "spacing": 0,
+    "margin-top": 8,
+    "margin-left": 12,
+    "margin-right": 12,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["network", "pulseaudio", "memory", "battery", "clock"],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "ᚢ",
+            "2": "ᚦ",
+            "3": "ᚨ",
+            "4": "ᚱ",
+            "5": "ᚲ",
+            "active": "᛭",
+            "default": "᛫"
+        },
+        "persistent-workspaces": { "*": 5 },
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 40,
+        "separate-outputs": true,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "󰈹  $1",
+            "(.*) - Visual Studio Code": "󰨞  $1",
+            "": "◈  Escritorio Sheikah",
+            "(.*)kitty(.*)": "  Terminal",
+            "(.*)Thunar(.*)": "󰉋  Archivos"
+        }
+    },
+
+    "network": {
+        "format-wifi": "󰤨  {essid}",
+        "format-ethernet": "󰈀  ETH",
+        "format-disconnected": "󰤭",
+        "tooltip-format-wifi": "{essid}  {signalStrength}%\n{ipaddr}",
+        "max-length": 18,
+        "on-click": "networkmanager_dmenu"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "on-click": "pavucontrol",
+        "scroll-step": 5
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "󰍛  {percentage}%",
+        "tooltip-format": "{used}GB / {total}GB"
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "󰂄  {capacity}%",
+        "format-plugged": "󰚥  {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{timeTo}  ·  {power}W"
+    },
+
+    "clock": {
+        "format": "󰔚  {:%H:%M}",
+        "format-alt": "󰃭  {:%a %d %b}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "on-click": "toggle"
+    }
+}

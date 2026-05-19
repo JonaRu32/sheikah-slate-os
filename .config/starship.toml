@@ -1,0 +1,81 @@
+# ═══════════════════════════════════════
+# STARSHIP — PROMPT SHEIKAH
+# ═══════════════════════════════════════
+add_newline = true
+
+format = """
+$os$directory$git_branch$git_status$java$python$nodejs$cmd_duration$fill$time
+$character"""
+
+# ── OS ──────────────────────────────────
+[os]
+disabled = false
+style    = "bold #00F0FF"
+format   = "[$symbol]($style)"
+
+[os.symbols]
+Arch      = "󰣇 "
+CachyOS   = "󰣇 "
+Unknown   = "󰣇 "
+
+# ── DIRECTORIO ──────────────────────────
+[directory]
+style            = "bold #f1c40f"
+read_only        = " 󰌾"
+truncation_length = 3
+truncate_to_repo = true
+format           = "[$path]($style)[$read_only](red) "
+
+# ── GIT ─────────────────────────────────
+[git_branch]
+symbol = "  "
+style  = "italic #00F0FF"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+format    = '([$all_status$ahead_behind]($style) )'
+style     = "bold #ff3333"
+ahead     = "⇡${count}"
+behind    = "⇣${count}"
+diverged  = "⇕⇡${ahead_count}⇣${behind_count}"
+modified  = "✎${count}"
+untracked = "?${count}"
+staged    = "+${count}"
+deleted   = "✘${count}"
+
+# ── LENGUAJES ───────────────────────────
+[java]
+symbol = "☕ "
+style  = "bold #f1c40f"
+format = "[$symbol($version)]($style) "
+
+[python]
+symbol = "󰌠 "
+style  = "bold #2ecc71"
+format = "[$symbol($version)]($style) "
+
+[nodejs]
+symbol = "󰎙 "
+style  = "bold #2ecc71"
+format = "[$symbol($version)]($style) "
+
+# ── FILL (empuja el tiempo a la derecha) ─
+[fill]
+symbol = " "
+
+# ── TIEMPO ──────────────────────────────
+[time]
+disabled      = false
+format        = "[󰔚 $time]($style) "
+style         = "dimmed #4b696d"
+time_format   = "%H:%M"
+
+# ── DURACIÓN ────────────────────────────
+[cmd_duration]
+min_time = 500
+format   = "[⏳ $duration]( #76d7c4) "
+
+# ── CARÁCTER ────────────────────────────
+[character]
+success_symbol = "[◈](bold #FF7A00)"
+error_symbol   = "[◇](bold #ff3333)"

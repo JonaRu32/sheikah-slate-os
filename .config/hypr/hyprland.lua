@@ -66,6 +66,9 @@ hl.config({
     },
 })
 
+
+
+
 -- Salida suave y elegante (ventanas que abren)
 hl.curve("sheikahOpen",  { type = "bezier", points = { {0.05, 0.9}, {0.1, 1.05} } })
 
@@ -111,6 +114,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("thunar"))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("rofi -show drun -theme ~/.config/rofi/sheikah.rasi"))hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("spotify"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("networkmanager_dmenu"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("kitty --title 'CAVA Sheikah' cava"))
 
 -- 2. EL WIDGET "COZY" — versión corregida
 hl.bind(mainMod .. " + Escape", function()

@@ -3,6 +3,8 @@ if status is-interactive
     # ── INICIALIZAR STARSHIP ─────────────────
     starship init fish | source
     set fish_greeting ""
+    alias cava="cava"
+    alias music="kitty --title 'CAVA Sheikah' --override background_opacity=0.95 cava &"
 
     # ── LIMPIAR Y MOSTRAR TELEMETRÍA ─────────
     clear

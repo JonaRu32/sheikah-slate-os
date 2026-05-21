@@ -1,6 +1,11 @@
+
 # 📱 Sheikah Slate OS - Hyprland Dotfiles 🗡️
 
-*"Ancient technology adapted for modern netrunning."*
+<img width="1920" height="1080" alt="capturaescritorio" src="https://github.com/user-attachments/assets/6b4bd99a-ba6a-4303-8e2d-92493d0ae5ec" />
+
+<img width="1920" height="1080" alt="capturaterminal" src="https://github.com/user-attachments/assets/03a5b3c3-f8ac-4478-9c81-a86ca325460e" />
+
+
 
 This is my custom-built desktop environment from scratch on **CachyOS** (Arch Linux). It is carefully designed to emulate the mystical, touch-based interface of a **Sheikah Slate**.
 

@@ -42,7 +42,7 @@ prompt {
 
 entry {
     text-color:        @fg;
-    placeholder:       "Buscar red...";
+    placeholder:       "Buscar...";
     placeholder-color: #4b696d;
 }
 

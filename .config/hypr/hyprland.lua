@@ -11,8 +11,8 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("awww-daemon")
     hl.exec_cmd("awww img /home/jonathan/.config/hypr/wallpapers/fondosheika.png")
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
-    hl.exec_cmd("xsettingsd")  -- ← añade esta línea
-    hl.exec_cmd("dunst")       -- ← y esta si no la tenías
+    hl.exec_cmd("xsettingsd")
+    hl.exec_cmd("dunst")
 end)
 
 hl.env("__NV_PRIME_RENDER_OFFLOAD", "1")
@@ -111,12 +111,13 @@ hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("code"))
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("thunar"))
-hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("rofi -show drun -theme ~/.config/rofi/sheikah.rasi"))hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("spotify"))
+hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("rofi -show drun -theme ~/.config/rofi/sheikah.rasi"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("spotify"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("networkmanager_dmenu"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("kitty --title 'CAVA Sheikah' cava"))
 
--- 2. EL WIDGET "COZY" — versión corregida
+-- 2. EL WIDGET "COZY"
 hl.bind(mainMod .. " + Escape", function()
     hl.dispatch(hl.dsp.window.float({ action = "on" }))
     hl.dispatch(hl.dsp.window.resize({ x = 600, y = 400, exact = true }))
@@ -132,13 +133,15 @@ hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", function()
     hl.dispatch(hl.dsp.window.fullscreen({ mode = 0 }))
-end)-- 4. GESTIÓN DE ESCRITORIOS
+end)
+
+-- 4. GESTIÓN DE ESCRITORIOS
 for i = 1, 9 do
     hl.bind(mainMod .. " + " .. tostring(i), hl.dsp.focus({ workspace = i }))
     hl.bind(mainMod .. " + SHIFT + " .. tostring(i), hl.dsp.window.move({ workspace = i }))
 end
 
--- Navegación de escritorios con las flechas (La original que te funcionaba)
+-- Navegación de escritorios con las flechas
 hl.bind(mainMod .. " + Right", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + Left", hl.dsp.focus({ workspace = "e-1" }))
 

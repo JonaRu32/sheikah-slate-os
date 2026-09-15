@@ -9,6 +9,7 @@
   <img alt="Hyprland 0.55" src="https://img.shields.io/badge/Hyprland-0.55-00F0FF?style=flat-square&logo=hyprland&logoColor=white">
   <img alt="Wayland" src="https://img.shields.io/badge/Wayland-native-0080FF?style=flat-square&logo=wayland&logoColor=white">
   <img alt="CachyOS" src="https://img.shields.io/badge/CachyOS-Arch_Linux-1793D1?style=flat-square&logo=archlinux&logoColor=white">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-FF7A00?style=flat-square"></a>
 </p>
 
 <p align="center">
@@ -144,6 +145,10 @@ Other personal touches:
 - [Catppuccin](https://github.com/catppuccin): GTK theme and Micro colour schemes.
 - [Micro](https://github.com/zyedidia/micro) syntax files (MIT, Zachary Yedidia et al.), included in `.config/micro/syntax/`.
 - [Bibata cursor](https://github.com/ful1e5/Bibata_Cursor), [Papirus icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) and [JetBrains Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts).
+
+## 📄 License
+
+My configuration files are released under the [MIT License](LICENSE). Third-party files included in this repo (listed in Credits) keep their own licenses.
 
 ---
 

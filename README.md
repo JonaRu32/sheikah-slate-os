@@ -2,13 +2,15 @@
 
 <p align="center">
   <b>Hyprland dotfiles inspired by the Sheikah Slate from <i>The Legend of Zelda: Breath of the Wild</i>.</b><br>
-  A cyan-on-black desktop built from scratch on CachyOS: animated borders, a rune-based status bar and a lock screen that asks for your "access key".
+  A cyan-on-black desktop built from scratch on CachyOS: animated borders, a rune-based status bar and a lock screen that asks for your "access key".<br>
+  The terminal setup also runs on <b>macOS</b> (see <a href="#-macos-version">macOS version</a>).
 </p>
 
 <p align="center">
   <img alt="Hyprland 0.55" src="https://img.shields.io/badge/Hyprland-0.55-00F0FF?style=flat-square&logo=hyprland&logoColor=white">
   <img alt="Wayland" src="https://img.shields.io/badge/Wayland-native-0080FF?style=flat-square&logo=wayland&logoColor=white">
   <img alt="CachyOS" src="https://img.shields.io/badge/CachyOS-Arch_Linux-1793D1?style=flat-square&logo=archlinux&logoColor=white">
+  <img alt="macOS terminal" src="https://img.shields.io/badge/macOS-terminal-e2e2d7?style=flat-square&logo=apple&logoColor=white">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-FF7A00?style=flat-square"></a>
 </p>
 
@@ -47,6 +49,7 @@
 | `.config/gtk-3.0/`, `.config/gtk-4.0/`, `.config/nwg-look/` | GTK theme, icons, cursor and font |
 | `.config/micro/` | Micro editor with Catppuccin colour schemes |
 | `.config/assets/` | Fastfetch logo and README screenshots |
+| `macos/.config/` | macOS versions of the Kitty, Fish and Fastfetch configs (Starship and the logo are shared) |
 
 ## 📦 Dependencies
 
@@ -112,6 +115,43 @@ Other personal touches:
 
 - The Fish greeting ends with `UNIDAD: JONATHAN`. Change it in `.config/fish/config.fish`.
 - The interface text (bar, lock screen, greeting) is in **Spanish**.
+
+## 🍎 macOS version
+
+Hyprland, Waybar and the rest of the desktop are Linux-only, but the **terminal** looks the same on macOS: Kitty with the Sheikah palette, the Fish greeting, Fastfetch with the Sheikah eye and the Starship prompt. Tested on a **MacBook Air M3** with **macOS Tahoe 26**.
+
+<p align="center">
+  <img src=".config/assets/capturaterminal-macos.png" alt="Kitty on macOS with Fastfetch showing the Sheikah eye and the MacBook's specs, the 'Sheikah System' greeting in Fish and the Starship prompt with the Apple logo" width="100%">
+</p>
+
+```bash
+# 1. Dependencies (Homebrew)
+brew install fish starship fastfetch
+brew install --cask kitty font-jetbrains-mono-nerd-font
+
+# 2. Clone the repository and back up your current configs
+git clone https://github.com/JonaRu32/sheikah-slate-os.git ~/sheikah-slate-os
+mkdir -p ~/.config-backup
+for d in kitty fish fastfetch starship.toml; do
+  [ -e ~/.config/$d ] && cp -r ~/.config/$d ~/.config-backup/
+done
+
+# 3. Copy the shared files and the macOS configs
+mkdir -p ~/.config/assets
+cp ~/sheikah-slate-os/.config/starship.toml ~/.config/
+cp ~/sheikah-slate-os/.config/assets/sheik.png ~/.config/assets/
+cp -r ~/sheikah-slate-os/macos/.config/. ~/.config/
+```
+
+Then open **Kitty**. It starts Fish by itself, so your login shell stays as zsh. To get the same prompt in other terminals (VS Code, Terminal.app), add `eval "$(starship init zsh)"` to `~/.zshrc`.
+
+What changes from the Linux version:
+
+- **Shortcuts use `Cmd`**: `Cmd + T` new tab, `Cmd + W` close, `Cmd + Shift + ← / →` switch tabs, `Cmd + = / - / 0` font size.
+- **`Option` is left alone** (`macos_option_as_alt no`), because Spanish and other non-US layouts need it for `@ # [ ] { } \ |`.
+- **Background blur** behind the transparent window, and no title bar.
+- Fish loads Homebrew and, if installed, **Java 21** (`openjdk@21`).
+- Fastfetch drops the window manager line, and Starship shows the Apple logo.
 
 ## ⌨️ Keybindings
 
